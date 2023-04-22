@@ -1,0 +1,116 @@
+<!DOCTYPE html> <!--shift+alt+F -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="NavigationContainer">
+
+            <img class="logo" src="RCS_logo.png">
+            <div id="Tabs">
+                <a href="index.html">Shop</a>
+                <a href="RequestPrint.html">Request a Print</a>
+                <a href="Contactus.html">Contact us</a>
+                <a href="Aboutus.html">About Us</a>
+
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+    <!--Center-->
+    <div class="content">
+        <div class="container">
+            <h1>
+                <center>Thank you for your Order</center>
+            </h1>
+            <h2>
+                <center>Please check your email for your invoice, production will only start once payment is sent
+                </center>
+            </h2>
+            <h2>
+                <center>Go back to Homepage: </center>
+            </h2>
+            <a href="https://rscprinting.000webhostapp.com/">
+                <center>https://rscprinting.000webhostapp.com/</center>
+            </a>
+
+
+
+
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            background: #28282B;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 800;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 2px 2px 2px 2px rgb(218, 16, 16);
+            padding: 15px;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 65px;
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+    <!--Center-->
+    <footer>
+        <div class="footerContainer">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="Aboutus.html">about us</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="Shipping.html">shipping</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-links">
+
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("Tabs");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

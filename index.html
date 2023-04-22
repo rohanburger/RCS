@@ -1,0 +1,444 @@
+<!DOCTYPE html> <!--shift+alt+F -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="NavigationContainer">
+
+            <img class="logo" src="RCS_logo.png">
+            <div id="Tabs">
+                <a href="index.html">Shop</a>
+                <a href="RequestPrint.html">Request a Print</a>
+                <a href="Contactus.html">Contact us</a>
+                <a href="Aboutus.html">About Us</a>
+
+            </div>
+
+            <a href="#" class="CartIcon"><i id="Cart" class="fa fa-shopping-cart"
+                    style="font-size:24px;color:#ffffff"></i></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+    <!--Center-->
+    <!--Shop-->
+    <section class="shop" id="shop">
+        <div class="Shopcontainer">
+
+            <div class="box">
+                <img src="ProductImages/pochhita image.PNG">
+                <label id="Product1">Pochita Keycap</label>
+                <h5>R50.00</h5>
+                <button class="ProductAdd1" onclick="ProductAdd1()">Add to cart</button>
+            </div>
+
+            <div class="box">
+                <img src="ProductImages/Skyrim logo keycap.png">
+                <label id="Product2">Skyrim Keycap</label>
+                <h5>R30.00</h5>
+                <button class="ProductAdd2" onclick="ProductAdd2()">Add to cart</button>
+            </div>
+
+            <div class="box">
+                <img src="ProductImages/overwatch logo.png">
+                <label id="Product3">OW Keycap</label>
+                <h5>R40.00</h5>
+                <button class="ProductAdd3" onclick="ProductAdd3()">Add to cart</button>
+            </div>
+
+            <div class="box">
+                <img src="ProductImages/rogue leaf keycap.png">
+                <label id="Product4">leaflogo keycap</label>
+                <h5>R50.00</h5>
+                <button class="ProductAdd4" onclick="ProductAdd4()">Add to cart</button>
+            </div>
+
+            <div class="box">
+                <img src="ProductImages/OP logo keycap.png">
+                <label id="Product5">OP keycap</label>
+                <h5>R40.00</h5>
+                <button class="ProductAdd5" onclick="ProductAdd5()">Add to cart</button>
+            </div>
+        </div>
+    </section>
+    <!--Shop-->
+
+    <!--checkout begin-->
+    <div id="CheckoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="model-inputs">
+                <div class="row">
+                    <div class="column left">
+                        <h2>Products in Cart</h2>
+                        <form method="POST" action="https://formsubmit.co/rcs3dprinting@gmail.com"
+                            enctype="multipart/form-data">
+                            <input type="hidden" name="_captcha" value="false">
+                            <div class="cart" id="cart">
+
+                                <div id="ProductCheckout1" style="display:none ;">
+                                    <input type="text" name="Product1" id="ProductName1" value="Pochita Keycap"
+                                        readonly>
+                                    <input type="number" name="Quantity1" id="Productquantity1" min="1" max="10"
+                                        onchange="productquantity1()">
+                                    <input type="number" value="0" id="Productprice1" readonly>
+                                    <button class="ProductClose1" onclick="ProductRemove1()">x</button>
+                                </div>
+
+                                <div id="ProductCheckout2" style="display:none ;">
+                                    <input type="text" name="Product2" id="ProductName2" value="Skyrim logo Keycap"
+                                        readonly>
+                                    <input type="number" name="Quantity2" id="Productquantity2" min="1" max="10"
+                                        onchange="productquantity2()">
+                                    <input type="number" value="0" id="Productprice2" readonly>
+                                    <button class="ProductClose2" onclick="ProductRemove2()">x</button>
+                                </div>
+
+                                <div id="ProductCheckout3" style="display:none ;">
+                                    <input type="text" name="Product3" id="ProductName3" value="Overwatch logo keycap"
+                                        readonly>
+                                    <input type="number" name="Quantity3" id="Productquantity3" min="1" max="10"
+                                        onchange="productquantity3()">
+                                    <input type="number" value="0" id="Productprice3" readonly>
+                                    <button class="ProductClose3" onclick="ProductRemove3()">x</button>
+                                </div>
+
+                                <div id="ProductCheckout4" style="display:none ;">
+                                    <input type="text" name="Product4" id="ProductName4" value="leaf logo Keycap"
+                                        readonly>
+                                    <input type="number" name="Quantity4" id="Productquantity4" min="1" max="10"
+                                        onchange="productquantity4()">
+                                    <input type="number" value="0" id="Productprice4" readonly>
+                                    <button class="ProductClose4" onclick="ProductRemove4()">x</button>
+                                </div>
+
+                                <div id="ProductCheckout5" style="display:none ;">
+                                    <input type="text" name="Product5" id="ProductName5" value="One piece Keycap"
+                                        readonly>
+                                    <input type="number" name="Quantity5" id="Productquantity5" min="1" max="10"
+                                        onchange="productquantity5()">
+                                    <input type="number" value="0" id="Productprice5" readonly>
+                                    <button class="ProductClose5" onclick="ProductRemove5()">x</button>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="column middle">
+                        <h2>Cart pricing</h2>
+                        <div>
+                            <label for="CartCost">Cart Cost:R</label>
+                        </div>
+                        <div>
+                            <input type="number" name="CartCost" id="CartCost" value="0" readonly>
+                        </div>
+
+
+                    </div>
+
+                    <div class="column right">
+                        <div id="ClientInfo">
+                            <h2>Client Information</h2>
+                            <div>
+                                <label for="email">Email</label>
+                            </div>
+                            <div>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div>
+                                <label for="location">Ship to Postnet location:</label>
+                            </div>
+                            <div>
+                                <select type="text" id="location" name="location" required>
+                                    <option value=" "> </option>
+                                    <option value="Alberton  ">Alberton </option>
+                                    <option value=" Amanzimtoti ">Amanzimtoti </option>
+                                    <option value="Atterbury  ">Atterbury </option>
+                                    <option value="Aukland Park  ">Aukland Park </option>
+                                    <option value="Balfour Park  ">Balfour Park </option>
+                                    <option value=" Ballito "> Ballito </option>
+                                    <option value="Beacon Bay ">Beacon Bay </option>
+                                    <option value="Bedford Centre ">Bedford Centre </option>
+                                    <option value="Benmore ">Benmore </option>
+                                    <option value="Benoni   ">Benoni </option>
+                                    <option value="Bethal  ">Bethal </option>
+                                    <option value="Bethlehem  ">Bethlehem </option>
+                                    <option value="Boksburg  ">Boksburg </option>
+                                    <option value="Booysens ">Booysens </option>
+                                    <option value="Bracken City  ">Bracken City </option>
+                                    <option value="Brackenfell  ">Brackenfell </option>
+                                    <option value="Brits  ">Brits </option>
+                                    <option value="Broadacres  ">Broadacres </option>
+                                    <option value="Bronkhorstspruit   ">Bronkhorstspruit </option>
+                                    <option value="Brooklyn  ">Brooklyn </option>
+                                    <option value="Bryanston  "> Bryanston </option>
+                                    <option value="Canal Walk  ">Canal Walk </option>
+                                    <option value="Cape Town Central  ">Cape Town Central </option>
+                                    <option value="Cape Town Long Street ">Cape Town Long Street </option>
+                                    <option value="Cape Town Matropolitan  ">Cape Town Matropolitan </option>
+                                    <option value="Carlton Centre  ">Carlton Centre </option>
+                                    <option value="Castle Walk ">Castle Walk </option>
+                                    <option value="Cavendish ">Cavendish </option>
+                                    <option value="Church Street  ">Church Street </option>
+                                    <option value="Constantia ">Constantia </option>
+                                    <option value="Cornwall View ">Cornwall View </option>
+                                    <option value="Cowey  ">Cowey </option>
+                                    <option value="Craighall  ">Craighall </option>
+                                    <option value="Davenport  ">Davenport </option>
+                                    <option value="Durban North ">Durban North </option>
+                                    <option value="Durbanville ">Durbanville </option>
+                                    <option value="Eastgate   ">Eastgate </option>
+                                    <option value="Edenglen  ">Edenglen </option>
+                                    <option value="Edenvale ">Edenvale </option>
+                                    <option value="Edleen  ">Edleen </option>
+                                    <option value="Equestria ">Equestria </option>
+                                    <option value="Ermelo Express ">Ermelo Express </option>
+                                    <option value="Esselen Street ">Esselen Street </option>
+                                    <option value="Farramere  ">Farramere </option>
+                                    <option value="Featherbrooke  ">Featherbrooke </option>
+                                    <option value="Flamwood  ">Flamwood </option>
+                                    <option value="Florida ">Florida </option>
+                                    <option value="Fordsburg  ">Fordsburg </option>
+                                    <option value="Fourways Mall  ">Fourways Mall </option>
+                                    <option value="Franschhoek  ">Franschhoek </option>
+                                    <option value="Gallor Manor  ">Gallor Manor </option>
+                                    <option value="Gardens  ">Gardens </option>
+                                    <option value="George ">George </option>
+                                    <option value="Glenfair  ">Glenfair </option>
+                                    <option value="Gordons Bay  ">Gordons Bay </option>
+                                    <option value="Grahamstown   ">Grahamstown </option>
+                                    <option value="Groblersdal  ">Groblersdal </option>
+                                    <option value="Hampton Court ">Hampton Court </option>
+                                    <option value="Hartebeespoort Dam  ">Hartebeespoort Dam </option>
+                                    <option value="Hatfield ">Hatfield </option>
+                                    <option value="Hayfields  ">Hayfields </option>
+                                    <option value="Hazeldean ">Hazeldean </option>
+                                    <option value="Heidelberg   ">Heidelberg </option>
+                                    <option value="Hermanus ">Hermanus </option>
+                                    <option value="Highveld Mall ">Highveld Mall </option>
+                                    <option value="Hillbrow   ">Hillbrow </option>
+                                    <option value="Hillcrest  ">Hillcrest </option>
+                                    <option value="Hilton ">Hilton </option>
+                                    <option value="Houtbay  ">Houtbay </option>
+                                    <option value="Howick   ">Howick </option>
+                                    <option value="Illovo  ">Illovo </option>
+                                    <option value="Isando  ">Isando </option>
+                                    <option value="Johannesburg International ">Johannesburg International </option>
+                                    <option value="Kempton Park  ">Kempton Park </option>
+                                    <option value="Kenilworth ">Kenilworth </option>
+                                    <option value="Killarney  "> Killarney </option>
+                                    <option value="Kloof ">Kloof </option>
+                                    <option value="Knysna ">Knysna </option>
+                                    <option value="Krugersdorp ">Krugersdorp </option>
+                                    <option value="Kuilsriver ">Kuilsriver </option>
+                                    <option value="Kuruman  ">Kuruman </option>
+                                    <option value="Kyalami ">Kyalami </option>
+                                    <option value="La Lucia ">La Lucia </option>
+                                    <option value="Ladysmith ">Ladysmith </option>
+                                    <option value="Lakeside ">Lakeside </option>
+                                    <option value="Lephalale  ">Lephalale </option>
+                                    <option value="Library Gardens  ">Library Gardens </option>
+                                    <option value="Lichtenburg  ">Lichtenburg </option>
+                                    <option value="Lydenburg ">Lydenburg </option>
+                                    <option value="Lynnwood ">Lynnwood </option>
+                                    <option value="Mafikeng  ">Mafikeng </option>
+                                    <option value="Malmesbury  ">Malmesbury </option>
+                                    <option value="Matatiele ">Matatiele </option>
+                                    <option value="Melkbosstrand ">Melkbosstrand </option>
+                                    <option value=" Melrose Arch ">Melrose Arch </option>
+                                    <option value="Melville  ">Melville </option>
+                                    <option value="Menlyn ">Menlyn </option>
+                                    <option value="Messina  ">Messina </option>
+                                    <option value="Metlife ">Metlife </option>
+                                    <option value="Meyersdal  ">Meyersdal </option>
+                                    <option value="Meyerton  ">Meyerton </option>
+                                    <option value="Middelburg  ">Middelburg </option>
+                                    <option value="Midrand  ">Midrand </option>
+                                    <option value="Midstream ">Midstream </option>
+                                    <option value="Milnerton  ">Milnerton </option>
+                                    <option value="Mokopane ">Mokopane </option>
+                                    <option value="Montana  ">Montana </option>
+                                    <option value="Mossel Bay "> Mossel Bay</option>
+                                    <option value="Mount Edgecomb    ">Mount Edgecomb </option>
+                                    <option value="Mtubatuba ">Mtubatuba </option>
+                                    <option value="Mulbarton  ">Mulbarton </option>
+                                    <option value="N1 Value Centre ">N1 Value Centre </option>
+                                    <option value="Nelspruit ">Nelspruit </option>
+                                    <option value="Newcastle ">Newcastle </option>
+                                    <option value="Northcliffe  ">Northcliffe </option>
+                                    <option value="Northgate ">Northgate </option>
+                                    <option value="Northwold ">Northwold </option>
+                                    <option value="Norwood  "> Norwood </option>
+                                    <option value="Oakdale  ">Oakdale </option>
+                                    <option value="Oaklands  "> Oaklands </option>
+                                    <option value="Observatory  ">Observatory </option>
+                                    <option value="Ontdekkers   ">Ontdekkers </option>
+                                    <option value="Oudtshoorn  "> Oudtshoorn </option>
+                                    <option value="Paarl  ">Paarl </option>
+                                    <option value="Parktown  ">Parktown </option>
+                                    <option value=" Parkview ">Parkview </option>
+                                    <option value="Parow ">Parow </option>
+                                    <option value="Paulsof ">Paulsof </option>
+                                    <option value="PE Waterfront Express  ">PE Waterfront Express </option>
+                                    <option value="Phalaborwa ">Phalaborwa </option>
+                                    <option value="Piet Retief ">Piet Retief </option>
+                                    <option value="Pietermaritzburg CBD  ">Pietermaritzburg CBD </option>
+                                    <option value="Pine Town  ">Pine Town </option>
+                                    <option value="Pinelands ">Pinelands </option>
+                                    <option value="Plettenberg Bay ">Plettenberg Bay </option>
+                                    <option value="Plumstead   ">Plumstead </option>
+                                    <option value="Polokwane North ">Polokwane North </option>
+                                    <option value="Potchefstroom  ">Potchefstroom </option>
+                                    <option value="Pretoria CBD ">Pretoria CBD </option>
+                                    <option value="Pretoria West  "> Pretoria West </option>
+                                    <option value="Queensburgh ">Queensburgh </option>
+                                    <option value="Queenstown ">Queenstown </option>
+                                    <option value="Queenswood  ">Queenswood </option>
+                                    <option value="Richards bay  ">Richards bay </option>
+                                    <option value="Rietfontein ">Rietfontein </option>
+                                    <option value="Rivonia ">Rivonia </option>
+                                    <option value="Rock Cottage ">Rock Cottage </option>
+                                    <option value="Rondebosch ">Rondebosch </option>
+                                    <option value="Rosebank  ">Rosebank </option>
+                                    <option value="Rustenburg   ">Rustenburg </option>
+                                    <option value="Sandown ">Sandown </option>
+                                    <option value="Sandton City ">Sandton City </option>
+                                    <option value="Sasolburg ">Sasolburg </option>
+                                    <option value="Scottburgh ">Scottburgh </option>
+                                    <option value="Seapoint   ">Seapoint </option>
+                                    <option value="Secunda ">Secunda </option>
+                                    <option value="Shelly Beach ">Shelly Beach </option>
+                                    <option value="Showgate ">Showgate </option>
+                                    <option value="Silverton ">Silverton </option>
+                                    <option value="Sloane Square  ">Sloane Square </option>
+                                    <option value="Somerset Mall  ">Somerset Mall </option>
+                                    <option value="Somerset West ">Somerset West </option>
+                                    <option value="Sovenga Mall  ">Sovenga Mall </option>
+                                    <option value="Sparks Road ">Sparks Road </option>
+                                    <option value="Steenberg ">Steenberg </option>
+                                    <option value="Stellenbosch   ">Stellenbosch </option>
+                                    <option value="Stoneridge  ">Stoneridge </option>
+                                    <option value="Strubens Valley  ">Strubens Valley </option>
+                                    <option value="Sunninghill    ">Sunninghill </option>
+                                    <option value="Sunninghill Chilli Lane  ">Sunninghill Chilli Lane </option>
+                                    <option value="Sunnyvalley    "> Sunnyvalley </option>
+                                    <option value="Tableview ">Tableview </option>
+                                    <option value="Thabazimbi   ">Thabazimbi </option>
+                                    <option value="The Bridge ">The Bridge </option>
+                                    <option value="The Glen  ">The Glen </option>
+                                    <option value="Three Rivers  "> </option>
+                                    <option value="Tokai ">Tokai </option>
+                                    <option value="Tzaneen    ">Tzaneen </option>
+                                    <option value="Uitenhage   ">Uitenhage </option>
+                                    <option value="Umhlanga Rocks ">Umhlanga Rocks </option>
+                                    <option value="Upington ">Upington </option>
+                                    <option value="Vaal Mall  ">Vaal Mall </option>
+                                    <option value="Victory Park    ">Victory Park </option>
+                                    <option value="Village View   ">Village View </option>
+                                    <option value="Vincent ">Vincent </option>
+                                    <option value="Vredenburg  ">Vredenburg </option>
+                                    <option value="Walmer   ">Walmer </option>
+                                    <option value="Warmbaths    ">Warmbaths </option>
+                                    <option value="Waterfall Mall ">Waterfall Mall </option>
+                                    <option value="Waterkloof Ridge ">Waterkloof Ridge </option>
+                                    <option value="Watermeyer  ">Watermeyer </option>
+                                    <option value="Waverley  "> Waverley </option>
+                                    <option value="Welkom   ">Welkom </option>
+                                    <option value="Westdene   ">Westdene </option>
+                                    <option value="Westgate ">Westgate </option>
+                                    <option value="Westville ">Westville </option>
+                                    <option value="Westwood Village  ">Westwood Village </option>
+                                    <option value="White River  ">White River </option>
+                                    <option value="Windermere  ">Windermere </option>
+                                    <option value="Witbank   "> Witbank </option>
+                                    <option value="Woodmead   ">Woodmead </option>
+                                    <option value=" Worcester">Worcester </option>
+
+
+                                </select>
+                            </div>
+                            <h2>Total Cost</h2>
+                            <div>
+                                <label for="ShoppingCost">Shipping:R</label>
+                            </div>
+                            <div>
+                                <input type="text" name="ShoppingCost" id="ShoppingCost" value="100" readonly>
+                            </div>
+                            <div>
+                                <label for="TotalCost">Total Cost:R</label>
+                            </div>
+                            <div>
+                                <input type="number" name="TotalCost" id="TotalCost" readonly>
+                            </div>
+                            <input type="hidden" name="_next"
+                                value="https://rcs3dprinting.000webhostapp.com/ThankYou.html">
+                            <button type="submit">Buy Product</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--checkout end-->
+
+    <!--Center-->
+    <footer>
+        <div class="footerContainer">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="Aboutus.html">about us</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="Shipping.html">shipping</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-links">
+
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("Tabs");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+<script src="button.js"></script>
+<script src="button2.js"></script>
+<script src="button3.js"></script>
+<script src="button4.js"></script>
+<script src="button5.js"></script>
+<script src="model.js"></Script>
+
+
+</html>

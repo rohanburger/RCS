@@ -1,0 +1,471 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #28282B;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  min-height: 100vh;
+}
+
+/*Header*/
+header {
+  width: 100%;
+  background-color: #020403;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+
+}
+
+
+.NavigationContainer {
+  overflow: hidden;
+  background-color: #020403;
+  position: relative;
+}
+
+.NavigationContainer #Tabs {
+  display: none;
+}
+
+.NavigationContainer a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.NavigationContainer a.icon {
+  background: rgb(255, 255, 255);
+  background-color: #020403;
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.NavigationContainer a:hover {
+  color: red;
+}
+
+.CartIcon {
+  display: block;
+  position: absolute;
+  right: 50px;
+  top: 0px;
+}
+
+/*Center*/
+section {
+  padding: 30px;
+}
+
+.Shopcontainer {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(200px, auto));
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 2rem;
+  width: 60%;
+  margin: auto;
+
+
+
+}
+
+.box {
+  padding: 10px 20px 30px 20px;
+  background: transparent;
+  box-shadow: 2px 2px 2px 2px rgb(218, 16, 16);
+  border-radius: 5px;
+  position: relative;
+  transition: all .35s ease;
+  background-color: white;
+  height: 200px;
+
+}
+
+.box img {
+  height: 150px;
+  width: 150px;
+}
+
+.box h5 {
+  border-color: red;
+}
+
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.shop button {
+  color: white;
+  background-color: red;
+  border: red;
+  font-size: 18px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.shop button:hover {
+  color: white;
+  background-color: rgb(70, 70, 70);
+  border: rgb(70, 70, 70);
+  font-size: 18px;
+  width: 100%;
+
+}
+
+/*Model*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  height: 100%;
+
+
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.model-inputs {
+  width: 100%;
+}
+
+.cart input {
+  width: 28%;
+}
+
+.cart button {
+  color: #aaaaaa;
+  background-color: white;
+  border: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart button:hover {
+  color: rgb(0, 0, 0);
+
+}
+
+/*Column begin*/
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+
+}
+
+.left,
+.right {
+  width: 100%;
+}
+
+.middle {
+  width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Footer*/
+footer {
+  background-color: #020403;
+  position: sticky;
+  top: 100%;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: red;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: red;
+  padding-left: 2px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: #444;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: red;
+  background-color: #ffffff;
+}
+
+/*Center Containers*/
+.CenterContainer {
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 2px red;
+  padding: 15px;
+  margin-top: 5px;
+}
+
+.CenterContent {
+  padding: 65px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.RequestContainer {
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 2px red;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.RequestContent {
+  padding: 0px;
+  width: 100%;
+  margin: auto;
+}
+
+.QuestionContrainer {
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 2px red;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+
+}
+
+.QuestionContent {
+  padding: px;
+  width: 100%;
+  margin: auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+
+
+@media only screen and (min-width: 1770px) {
+  .RequestContent {
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .NavigationContainer #Tabs a {
+    font-size: 18px;
+  }
+
+  .NavigationContainer a.icon {
+    font-size: 20px;
+  }
+ .QuestionContrainer{
+    margin-top: 100px; 
+  margin-left: 500px;
+  margin-right: 500px;
+ }
+ .QuestionContent{
+  padding: 10px  ;  
+  max-width: 100%;
+  margin: auto;
+  }
+
+  .logo {
+    width: 140px;
+    height: 150px;
+  }
+
+  section {
+    padding: 40px;
+  }
+
+  .Shopcontainer {
+    grid-template-columns: repeat(5, minmax(200px, auto));
+    gap: 2rem;
+  }
+
+  .box {
+    padding: 0px 20px 10px 20px;
+    height: 100%;
+    margin: auto;
+    font-size: 16px;
+  }
+
+  .box img {
+    height: 150px;
+    width: 150px;
+  }
+
+
+  .shop button {
+    font-size: 18px;
+  }
+
+  .shop button:hover {
+    font-size: 18px;
+  }
+
+  .modal {
+    height: 100%;
+  }
+
+  .modal-content {
+    width: 75%;
+    height: 50%;
+  }
+
+  .left,
+  .right {
+    width: 35%;
+  }
+
+  .middle {
+    width: 25%;
+  }
+
+  footer {
+    left: 0px;
+    width: 100%;
+    margin: 0px;
+
+
+  }
+
+  .footerContainer {
+    max-width: 100%;
+    margin-left: 500px;
+
+  }
+
+  .footer-col h4 {
+    font-size: 25px;
+  }
+
+  .footer-col ul li a {
+    font-size: 18px;
+  }
+
+  .footer-col .social-links a {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
+}
